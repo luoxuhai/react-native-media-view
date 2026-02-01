@@ -16,8 +16,6 @@ type NativeProps = ComponentProps<typeof AvifViewNativeComponent>;
 export interface AvifViewProps extends Omit<NativeProps, 'source'> {
   /** Source of the AVIF image - use require('./path/to/image.avif') */
   source: ImageRequireSource;
-  /** Number of loops (0 = infinite) */
-  loopCount?: number;
   /** Resize mode for image display (aligned with React Native Image) */
   resizeMode?: ResizeMode;
 }
@@ -27,10 +25,9 @@ export interface AvifViewProps extends Omit<NativeProps, 'source'> {
  * Supports both static and animated AVIF images
  */
 export function AvifView(props: AvifViewProps) {
-  const { source, loopCount = 0, resizeMode = 'contain', ...restProps } = props;
+  const { source, resizeMode = 'contain', ...restProps } = props;
 
   const resolved = Image.resolveAssetSource(source);
-  console.log('Resolved AVIF source:', resolved);
   const resolvedSource: AvifSourceProps = {
     uri: resolved?.uri || '',
   };
@@ -39,7 +36,6 @@ export function AvifView(props: AvifViewProps) {
     <AvifViewNativeComponent
       {...restProps}
       source={resolvedSource}
-      loopCount={loopCount as any}
       resizeMode={resizeMode}
     />
   );

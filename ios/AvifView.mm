@@ -63,11 +63,6 @@ using namespace facebook::react;
     [_view setSource:sourceDict];
   }
 
-  // Update loopCount
-  if (oldViewProps.loopCount != newViewProps.loopCount) {
-    [_view setLoopCount:newViewProps.loopCount];
-  }
-
   // Update resizeMode (aligned with React Native Image)
   if (oldViewProps.resizeMode != newViewProps.resizeMode) {
     [_view setResizeMode:RCTNSStringFromString(newViewProps.resizeMode)];

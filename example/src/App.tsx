@@ -50,7 +50,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1a2e',
   },
   scrollContent: {
     alignItems: 'center',
@@ -59,13 +58,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#fff',
     marginBottom: 20,
   },
   imageContainer: {
     width: screenWidth - 40,
     height: screenWidth - 40,
-    backgroundColor: '#16213e',
+    backgroundColor: '#eee',
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',

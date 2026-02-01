@@ -1,5 +1,6 @@
 #import <React/RCTViewComponentView.h>
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 #ifndef AvifViewNativeComponent_h
 #define AvifViewNativeComponent_h

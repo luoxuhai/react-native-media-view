@@ -6,8 +6,6 @@ A React Native component for displaying AVIF images, including animated AVIF ima
 
 - Display static AVIF images
 - Play animated AVIF images with frame-by-frame control
-- Pause/resume animation with `paused` prop
-- Control loop count (0 = infinite)
 - Multiple content modes: contain, cover, stretch, center
 - Events: onLoad, onStart, onStop, onEnd, onFrame, onError
 - No third-party dependencies
@@ -47,8 +45,6 @@ import { AvifView } from 'react-native-avif';
   source={require('./assets/image.avif')}
   style={{ width: 300, height: 300 }}
   contentMode="contain"
-  paused={false}
-  loopCount={0}
   onLoad={(event) => {
     const { duration, frameCount, width, height } = event.nativeEvent;
     console.log('Loaded:', { duration, frameCount, width, height });
@@ -66,8 +62,6 @@ import { AvifView } from 'react-native-avif';
 | Prop          | Type                                            | Default     | Description                         |
 | ------------- | ----------------------------------------------- | ----------- | ----------------------------------- |
 | `source`      | `ImageRequireSource`                            | required    | AVIF image source (use `require()`) |
-| `paused`      | `boolean`                                       | `false`     | Pause the animation                 |
-| `loopCount`   | `number`                                        | `0`         | Number of loops (0 = infinite)      |
 | `contentMode` | `'contain' \| 'cover' \| 'stretch' \| 'center'` | `'contain'` | How the image should fit            |
 | `style`       | `ViewStyle`                                     | -           | Style for the view                  |
 
@@ -77,9 +71,7 @@ import { AvifView } from 'react-native-avif';
 | --------- | ----------------------------------------- | --------------------------------------------------------- |
 | `onLoad`  | `{ duration, frameCount, width, height }` | Called when image is loaded                               |
 | `onStart` | -                                         | Called when animation starts playing                      |
-| `onStop`  | -                                         | Called when animation is paused                           |
 | `onEnd`   | -                                         | Called when animation completes (last frame of last loop) |
-| `onFrame` | `{ frameNumber }`                         | Called on each frame change (animated AVIF)               |
 | `onError` | `{ error }`                               | Called when an error occurs                               |
 
 ## Requirements

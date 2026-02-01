@@ -1,9 +1,6 @@
 import { codegenNativeComponent } from 'react-native';
 import type { ViewProps } from 'react-native';
-import type {
-  DirectEventHandler,
-  Int32,
-} from 'react-native/Libraries/Types/CodegenTypes';
+import type { DirectEventHandler } from 'react-native/Libraries/Types/CodegenTypes';
 import type { HostComponent } from 'react-native';
 
 /**
@@ -25,8 +22,6 @@ export type ResizeMode = 'cover' | 'contain' | 'stretch' | 'center';
 interface NativeProps extends ViewProps {
   /** Source of the AVIF image */
   source?: AvifSourceProps;
-  /** Number of times to loop the animation (0 = infinite) */
-  loopCount?: Int32;
   /** Resize mode for image display (aligned with React Native Image) */
   resizeMode?: string;
   /** Callback when loading starts */
